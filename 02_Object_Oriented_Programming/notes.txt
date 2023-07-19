@@ -13,3 +13,6 @@ Rules
 1) Creating variables inside the class
         - create it inside constructor
         - used self.variable = 'xyz'
+
+2) Encapsulation
+        - __pin = _Atm__pin in memory
