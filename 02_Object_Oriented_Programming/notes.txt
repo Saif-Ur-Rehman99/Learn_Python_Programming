@@ -6,6 +6,8 @@ Function = methods
 variables/data/attributes = properties
 self = object in class
 
+user defined classes are mutable (changable)
+
 Rules
 
 1) Creating variables inside the class
