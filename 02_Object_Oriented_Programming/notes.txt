@@ -1,0 +1,13 @@
+Pascal Case --> HelloWorld
+Camel Case --> helloWorld
+Snake Case --> hello_world
+
+Function = methods
+variables/data/attributes = properties
+self = object in class
+
+Rules
+
+1) Creating variables inside the class
+        - create it inside constructor
+        - used self.variable = 'xyz'
