@@ -7,7 +7,7 @@ class Atm():
     def __init__(self):
         self.pin = ''
         self.__balance = 5000
-        Atm.counter = Atm.counter + 1
+        Atm.__counter = Atm.__counter + 1
         self.menu()
 
     def get_balance(self):
@@ -87,3 +87,4 @@ class Atm():
             self.menu()
 
 obj = Atm()
+

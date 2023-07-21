@@ -14,3 +14,5 @@ This method is knowns as _call by reference_
 In dynamic arrays we double the size of array and copy the previous items in the double size array.
 
 ![Alt text](image.png)
+
+### Python Lists are Dynamic Arrays
