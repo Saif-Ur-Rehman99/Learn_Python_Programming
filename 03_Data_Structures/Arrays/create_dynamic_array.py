@@ -1,13 +1,14 @@
+import sys
 import ctypes # It provides C compatible datatypes
 
 class MyList:
 
     def __init__(self):
-        self.size_of_array = 1
-        self.items_in_array = 0
+        self.size = 1
+        self.items = 0
 
         # create a C type array with size = self.size
-        self.array = self.__create_array(self.size_of_array)
+        self.array = self.__create_array(self.size)
 
 
     def __create_array(self, capacity):
@@ -15,26 +16,36 @@ class MyList:
         return (capacity * ctypes.py_object)()
     
     def __len__(self):
-        return self.items_in_array
+        return self.items
+    
+    def __str__(self):
+        output = ''
+        for i in range(self.items):
+            output = output + str(self.array[i]) + ','
+        return '[' + output[:-1] + ']'
     
     def append(self, item):
-        if self.size_of_array == self.items_in_array:
+        if self.size == self.items:
             # resize by 2 object's location
-            self.__resize(self.size_of_array + 2)
+            self.__resize(self.size + 2)
             
-        # append
-        self.array[self.items_in_array] = item
-        self.items_in_array = self.items_in_array + 1
+        # append on nth position and inc by 1
+        self.array[self.items] = item  
+        self.items = self.items + 1
 
     def __resize(self, new_capacity):
         # create a new array with new capacity
-        self.__create_array(new_capacity)
-        self.size_of_array = new_capacity
+        array2 = self.__create_array(new_capacity)
+        self.size = new_capacity
         # copy the content of A to B
-        for i in range(self.items_in_array):
-            arrayB[i] = self.array[i]
-        self.array = arrayB
+        for i in range(self.items):
+            array2[i] = self.array[i]
+        self.array = array2
 
 L = MyList()
 print(type(L))
-print(len(L))
+
+
+for i in range(0,10):
+    L.append(i)
+    print(L, sys.getsizeof(L))
