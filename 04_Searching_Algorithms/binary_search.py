@@ -1,4 +1,4 @@
-array = [51,32,73,94,50,26,56,87,100]
+array = [26,32,50,56,73,87,94,100]
 
 def binary_search(array, low, high, item):
     
