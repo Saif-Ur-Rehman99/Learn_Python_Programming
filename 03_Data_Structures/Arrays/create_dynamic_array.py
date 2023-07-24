@@ -45,7 +45,3 @@ class MyList:
 L = MyList()
 print(type(L))
 
-
-for i in range(0,10):
-    L.append(i)
-    print(L, sys.getsizeof(L))
